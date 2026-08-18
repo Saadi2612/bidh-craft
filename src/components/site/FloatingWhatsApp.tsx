@@ -1,12 +1,15 @@
-import { GENERAL_WA } from "@/lib/shop-data";
+import { useShell } from "@/lib/cms/context";
+import { generalWaLink } from "@/lib/cms/derive";
 
 export function FloatingWhatsApp() {
+  const { settings } = useShell();
+
   return (
     <a
-      href={GENERAL_WA}
+      href={generalWaLink(settings)}
       target="_blank"
       rel="noreferrer"
-      aria-label="Chat with THEBIDHCRAFT on WhatsApp"
+      aria-label={`Chat with ${settings.brandName} on WhatsApp`}
       className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-lift)] transition-transform hover:-translate-y-1"
     >
       <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">

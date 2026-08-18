@@ -1,36 +1,38 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+
 import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
-import {
-  BOX_PRICE_RANGE,
-  categories,
-  categoryBySlug,
-  CUSTOM_WA,
-  isBoxCategory,
-  productsByCategory,
-  QUOTE_NOTE,
-  type CategorySlug,
-} from "@/lib/shop-data";
-
+import { useShell } from "@/lib/cms/context";
+import { boxPriceRange, customWaLink } from "@/lib/cms/derive";
+import { imageAlt, imageSrcSet, imageUrl } from "@/lib/cms/image";
+import { fetchCategoryPage } from "@/lib/cms/queries";
 
 export const Route = createFileRoute("/category/$slug")({
-  loader: ({ params }) => {
-    const category = categoryBySlug(params.slug);
-    if (!category) throw notFound();
-    return { category };
+  loader: async ({ params }) => {
+    const result = await fetchCategoryPage({ data: { slug: params.slug } });
+    if (!result.category) throw notFound();
+    return { category: result.category, products: result.products };
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Collection not found — THEBIDHCRAFT" }, { name: "robots", content: "noindex" }] };
+      return {
+        meta: [
+          { title: "Collection not found — THEBIDHCRAFT" },
+          { name: "robots", content: "noindex" },
+        ],
+      };
     }
-    const { name, short } = loaderData.category;
-    const title = `${name} — Handmade & Hand-Printed | THEBIDHCRAFT`;
+    const { name, short, seo } = loaderData.category;
+    const title = seo.title ?? `${name} — Handmade & Hand-Printed | THEBIDHCRAFT`;
+    const description =
+      seo.description ??
+      `${short} Handmade ${name.toLowerCase()} for Nikkah, Walima, Mehndi, Aqeeqa and birthdays. Order on WhatsApp.`;
     return {
       meta: [
         { title },
-        { name: "description", content: `${short} Handmade ${name.toLowerCase()} from Rs. 150 for Nikkah, Walima, Mehndi, Aqeeqa and birthdays. Order on WhatsApp.` },
+        { name: "description", content: description },
         { property: "og:title", content: title },
-        { property: "og:description", content: short },
+        { property: "og:description", content: description },
         { property: "og:type", content: "website" },
         { property: "og:url", content: `/category/${params.slug}` },
       ],
@@ -41,16 +43,25 @@ export const Route = createFileRoute("/category/$slug")({
 });
 
 function CategoryPage() {
-  const { category } = Route.useLoaderData();
-  const items = productsByCategory(category.slug as CategorySlug);
+  const { category, products } = Route.useLoaderData();
+  const { settings, categories } = useShell();
   const others = categories.filter((c) => c.slug !== category.slug);
+
+  const priceLine =
+    category.pricing === "boxRange" ? `${boxPriceRange(settings)} per box` : settings.quoteNote;
 
   return (
     <div className="container-x py-14">
       <Reveal>
         <nav className="text-xs text-muted-foreground">
-          <Link to="/" className="hover:text-primary">Home</Link> /{" "}
-          <Link to="/shop" className="hover:text-primary">Shop</Link> / {category.name}
+          <Link to="/" className="hover:text-primary">
+            Home
+          </Link>{" "}
+          /{" "}
+          <Link to="/shop" className="hover:text-primary">
+            Shop
+          </Link>{" "}
+          / {category.name}
         </nav>
         <div className="mt-6 grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div>
@@ -59,22 +70,19 @@ function CategoryPage() {
               {category.intro}
             </p>
             <p className="mt-5 text-sm">
-              {isBoxCategory(category.slug as CategorySlug)
-                ? `${BOX_PRICE_RANGE} per box`
-                : QUOTE_NOTE}{" "}
-              · {items.length} designs · custom prints on demand
+              {priceLine} · {products.length} designs · custom prints on demand
             </p>
-
-
           </div>
           <div className="surface-card overflow-hidden">
             <img
               data-image-placeholder={category.slug}
-              src={category.image}
-              alt={category.imageAlt}
+              src={imageUrl(category.image, { width: 900, height: 675 })}
+              srcSet={imageSrcSet(category.image, [600, 900, 1200])}
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              alt={imageAlt(category.image, category.name)}
               loading="lazy"
               width={900}
-              height={900}
+              height={675}
               className="aspect-[4/3] w-full object-cover"
             />
           </div>
@@ -82,7 +90,7 @@ function CategoryPage() {
       </Reveal>
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {items.map((p, i) => (
+        {products.map((p, i) => (
           <ProductCard key={p.id} product={p} delay={Math.min(i, 8) * 60} />
         ))}
       </div>
@@ -91,9 +99,15 @@ function CategoryPage() {
         <div className="surface-card p-8 text-center">
           <h2 className="text-2xl">Don't see exactly what you pictured?</h2>
           <p className="mx-auto mt-3 max-w-lg text-sm text-muted-foreground">
-            Show us any design and we can make it. Just order at least 5 days before your event.
+            Show us any design and we can make it. Just order at least {settings.leadTimeDays} days
+            before your event.
           </p>
-          <a href={CUSTOM_WA} target="_blank" rel="noreferrer" className="btn-salmon mt-6">
+          <a
+            href={customWaLink(settings)}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-salmon mt-6"
+          >
             Request a custom box
           </a>
         </div>
@@ -111,11 +125,11 @@ function CategoryPage() {
               className="surface-card group flex items-center gap-4 overflow-hidden p-3 transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
             >
               <img
-                src={c.image}
-                alt={c.imageAlt}
+                src={imageUrl(c.image, { width: 160, height: 160 })}
+                alt={imageAlt(c.image, c.name)}
                 loading="lazy"
-                width={900}
-                height={900}
+                width={160}
+                height={160}
                 className="h-16 w-16 shrink-0 rounded-2xl object-cover"
               />
               <span>

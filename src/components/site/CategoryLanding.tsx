@@ -1,10 +1,15 @@
 import { Link } from "@tanstack/react-router";
+
 import { ProductCard } from "@/components/site/ProductCard";
 import { Reveal } from "@/components/site/Reveal";
-import { categories, productsByCategory, type Category } from "@/lib/shop-data";
+import { useShell } from "@/lib/cms/context";
+import { imageAlt, imageUrl } from "@/lib/cms/image";
+import type { Category, ProductCardData } from "@/lib/cms/types";
 import { useUniqueProducts } from "@/lib/product-dedupe";
 
 export function CategoryThumbRail() {
+  const { categories } = useShell();
+
   return (
     <div className="-mx-5 overflow-x-auto px-5 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:px-0">
       <div className="flex w-max gap-3">
@@ -17,8 +22,8 @@ export function CategoryThumbRail() {
             style={{ animation: `reveal-up 0.6s cubic-bezier(0.22,1,0.36,1) ${i * 60}ms both` }}
           >
             <img
-              src={c.image}
-              alt={c.imageAlt}
+              src={imageUrl(c.image, { width: 400, height: 300 })}
+              alt={imageAlt(c.image, c.name)}
               loading="lazy"
               width={400}
               height={300}
@@ -32,12 +37,19 @@ export function CategoryThumbRail() {
   );
 }
 
-function CategorySection({ category, index }: { category: Category; index: number }) {
-  const items = useUniqueProducts(`category-${category.slug}`, productsByCategory(category.slug), {
+function CategorySection({
+  category,
+  products,
+  index,
+}: {
+  category: Category;
+  products: ProductCardData[];
+  index: number;
+}) {
+  const items = useUniqueProducts(`category-${category.slug}`, products, {
     limit: 4,
     allowFallback: true,
   });
-
 
   return (
     <Reveal delay={index * 60} className="pt-12 first:pt-0">
@@ -50,8 +62,8 @@ function CategorySection({ category, index }: { category: Category; index: numbe
             aria-label={category.name}
           >
             <img
-              src={category.image}
-              alt={category.imageAlt}
+              src={imageUrl(category.image, { width: 200, height: 200 })}
+              alt={imageAlt(category.image, category.name)}
               loading="lazy"
               width={200}
               height={200}
@@ -62,7 +74,7 @@ function CategorySection({ category, index }: { category: Category; index: numbe
             <h3 className="truncate font-display text-xl sm:text-2xl">{category.name}</h3>
             <p className="mt-1 text-xs text-muted-foreground">{category.short}</p>
             <p className="mt-1 text-[0.68rem] text-muted-foreground">
-              {productsByCategory(category.slug).length} designs · handmade to order
+              {products.length} designs · handmade to order
             </p>
           </div>
         </div>
@@ -86,12 +98,25 @@ function CategorySection({ category, index }: { category: Category; index: numbe
   );
 }
 
-export function CategoryLandingSections({ limit }: { limit?: number }) {
+export function CategoryLandingSections({
+  products,
+  limit,
+}: {
+  products: ProductCardData[];
+  limit?: number;
+}) {
+  const { categories } = useShell();
   const list = limit ? categories.slice(0, limit) : categories;
+
   return (
     <div className="divide-y divide-border">
       {list.map((c, i) => (
-        <CategorySection key={c.slug} category={c} index={i} />
+        <CategorySection
+          key={c.slug}
+          category={c}
+          products={products.filter((p) => p.category === c.slug)}
+          index={i}
+        />
       ))}
     </div>
   );

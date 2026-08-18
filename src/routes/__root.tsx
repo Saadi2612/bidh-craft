@@ -14,6 +14,8 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { FloatingWhatsApp } from "@/components/site/FloatingWhatsApp";
+import { SiteShellProvider } from "@/lib/cms/context";
+import { fetchShell } from "@/lib/cms/queries";
 
 function NotFoundComponent() {
   return (
@@ -25,8 +27,12 @@ function NotFoundComponent() {
           The page you're looking for doesn't exist — but our handmade boxes are just a click away.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
-          <Link to="/" className="btn-salmon">Go home</Link>
-          <Link to="/shop" className="btn-outline-rose">Browse the shop</Link>
+          <Link to="/" className="btn-salmon">
+            Go home
+          </Link>
+          <Link to="/shop" className="btn-outline-rose">
+            Browse the shop
+          </Link>
         </div>
       </div>
     </div>
@@ -72,6 +78,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  // Loaded once per render and shared with every page through SiteShellProvider,
+  // so the header, footer and WhatsApp links cost a single CMS read.
+  loader: () => fetchShell(),
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -121,18 +130,21 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const shell = Route.useLoaderData();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-screen flex-col">
-        <Header />
-        <main className="flex-1">
-          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-          <Outlet />
-        </main>
-        <Footer />
-        <FloatingWhatsApp />
-      </div>
+      <SiteShellProvider value={shell}>
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <main className="flex-1">
+            {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+            <Outlet />
+          </main>
+          <Footer />
+          <FloatingWhatsApp />
+        </div>
+      </SiteShellProvider>
     </QueryClientProvider>
   );
 }

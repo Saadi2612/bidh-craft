@@ -2,35 +2,37 @@ import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 import { Clock, MessageCircle } from "lucide-react";
+
 import { Reveal } from "@/components/site/Reveal";
+import { useShell } from "@/lib/cms/context";
 import {
-  LEAD_TIME_DAYS,
   earliestDeliveryDate,
-  occasions,
+  fillTemplate,
   preOrderWaLink,
-  products,
   toDateInputValue,
-} from "@/lib/shop-data";
+} from "@/lib/cms/derive";
+import { fetchPreOrderPage } from "@/lib/cms/queries";
 
 export const Route = createFileRoute("/pre-order")({
-  head: () => ({
-    meta: [
-      { title: "Pre-Order on WhatsApp — THEBIDHCRAFT" },
-      {
-        name: "description",
-        content:
-          "Pre-order handmade bid boxes, favor boxes and wedding signs. Tell us your occasion, quantity and delivery date — we need 5 days lead time.",
-      },
-      { property: "og:title", content: "Pre-Order on WhatsApp — THEBIDHCRAFT" },
-      {
-        property: "og:description",
-        content: "Share occasion, quantity and delivery date — we'll confirm on WhatsApp within hours.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/pre-order" },
-    ],
-    links: [{ rel: "canonical", href: "/pre-order" }],
-  }),
+  loader: () => fetchPreOrderPage(),
+  head: ({ loaderData }) => {
+    const seo = loaderData?.preOrder.seo;
+    const title = seo?.title ?? "Pre-Order on WhatsApp — THEBIDHCRAFT";
+    const description =
+      seo?.description ??
+      "Pre-order handmade bid boxes, favor boxes and wedding signs. Tell us your occasion, quantity and delivery date.";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: "/pre-order" },
+      ],
+      links: [{ rel: "canonical", href: "/pre-order" }],
+    };
+  },
   component: PreOrderPage,
 });
 
@@ -51,7 +53,11 @@ const schema = z.object({
 type Errors = Partial<Record<keyof z.infer<typeof schema>, string>>;
 
 function PreOrderPage() {
-  const minDate = useMemo(() => toDateInputValue(earliestDeliveryDate()), []);
+  const { preOrder, productNames } = Route.useLoaderData();
+  const { settings, occasions } = useShell();
+  const leadTime = settings.leadTimeDays;
+
+  const minDate = useMemo(() => toDateInputValue(earliestDeliveryDate(leadTime)), [leadTime]);
   const [form, setForm] = useState({
     name: "",
     occasion: "",
@@ -63,8 +69,10 @@ function PreOrderPage() {
   });
   const [errors, setErrors] = useState<Errors>({});
 
-  const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
-    setForm((f) => ({ ...f, [k]: e.target.value }));
+  const set =
+    (k: keyof typeof form) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+      setForm((f) => ({ ...f, [k]: e.target.value }));
 
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -85,13 +93,13 @@ function PreOrderPage() {
       return;
     }
     if (parsed.data.deliveryDate < minDate) {
-      setErrors({ deliveryDate: `We need ${LEAD_TIME_DAYS} days — earliest is ${minDate}` });
+      setErrors({ deliveryDate: `We need ${leadTime} days — earliest is ${minDate}` });
       return;
     }
     setErrors({});
     const d = parsed.data;
     window.open(
-      preOrderWaLink({
+      preOrderWaLink(settings, {
         name: d.name,
         occasion: d.occasion,
         quantity: d.quantity,
@@ -105,16 +113,16 @@ function PreOrderPage() {
     );
   }
 
-  const field = "mt-2 w-full rounded-xl border border-border bg-card px-4 py-3 text-sm outline-none focus:border-primary transition-colors";
+  const field =
+    "mt-2 w-full rounded-xl border border-border bg-card px-4 py-3 text-sm outline-none focus:border-primary transition-colors";
 
   return (
     <div className="container-x py-14">
       <Reveal className="mx-auto max-w-2xl text-center">
-        <p className="eyebrow">Pre-order</p>
-        <h1 className="mt-3 text-4xl sm:text-5xl">Reserve your boxes</h1>
+        <p className="eyebrow">{preOrder.eyebrow}</p>
+        <h1 className="mt-3 text-4xl sm:text-5xl">{preOrder.title}</h1>
         <p className="mt-5 text-sm text-muted-foreground">
-          Fill this in and we'll open WhatsApp with your details already written out. Everything is
-          handmade to order, so please allow {LEAD_TIME_DAYS} days before your event.
+          {fillTemplate(preOrder.intro, { leadTime })}
         </p>
       </Reveal>
 
@@ -133,46 +141,103 @@ function PreOrderPage() {
       <Reveal className="mx-auto mt-6 max-w-2xl">
         <form onSubmit={onSubmit} noValidate className="surface-card space-y-5 p-6 sm:p-8">
           <div>
-            <label htmlFor="name" className="eyebrow">Your name</label>
-            <input id="name" value={form.name} onChange={set("name")} maxLength={80} placeholder="e.g. Ayesha Khan" className={field} />
+            <label htmlFor="name" className="eyebrow">
+              Your name
+            </label>
+            <input
+              id="name"
+              value={form.name}
+              onChange={set("name")}
+              maxLength={80}
+              placeholder="e.g. Ayesha Khan"
+              className={field}
+            />
             {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
-              <label htmlFor="occasion" className="eyebrow">Occasion</label>
-              <select id="occasion" value={form.occasion} onChange={set("occasion")} className={field}>
+              <label htmlFor="occasion" className="eyebrow">
+                Occasion
+              </label>
+              <select
+                id="occasion"
+                value={form.occasion}
+                onChange={set("occasion")}
+                className={field}
+              >
                 <option value="">Select an occasion</option>
                 {occasions.map((o) => (
-                  <option key={o.slug} value={o.name}>{o.name}</option>
+                  <option key={o.slug} value={o.name}>
+                    {o.name}
+                  </option>
                 ))}
-                <option value="Corporate / Brand gifting">Corporate / Brand gifting</option>
-                <option value="Other">Other</option>
+                {preOrder.extraOccasionOptions.map((label) => (
+                  <option key={label} value={label}>
+                    {label}
+                  </option>
+                ))}
               </select>
-              {errors.occasion && <p className="mt-1 text-xs text-destructive">{errors.occasion}</p>}
+              {errors.occasion && (
+                <p className="mt-1 text-xs text-destructive">{errors.occasion}</p>
+              )}
             </div>
 
             <div>
-              <label htmlFor="quantity" className="eyebrow">Quantity</label>
-              <input id="quantity" type="number" min={1} max={5000} value={form.quantity} onChange={set("quantity")} className={field} />
-              {errors.quantity && <p className="mt-1 text-xs text-destructive">{errors.quantity}</p>}
+              <label htmlFor="quantity" className="eyebrow">
+                Quantity
+              </label>
+              <input
+                id="quantity"
+                type="number"
+                min={1}
+                max={5000}
+                value={form.quantity}
+                onChange={set("quantity")}
+                className={field}
+              />
+              {errors.quantity && (
+                <p className="mt-1 text-xs text-destructive">{errors.quantity}</p>
+              )}
             </div>
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
-              <label htmlFor="deliveryDate" className="eyebrow">Delivery date</label>
-              <input id="deliveryDate" type="date" min={minDate} value={form.deliveryDate} onChange={set("deliveryDate")} className={field} />
-              {errors.deliveryDate && <p className="mt-1 text-xs text-destructive">{errors.deliveryDate}</p>}
+              <label htmlFor="deliveryDate" className="eyebrow">
+                Delivery date
+              </label>
+              <input
+                id="deliveryDate"
+                type="date"
+                min={minDate}
+                value={form.deliveryDate}
+                onChange={set("deliveryDate")}
+                className={field}
+              />
+              {errors.deliveryDate && (
+                <p className="mt-1 text-xs text-destructive">{errors.deliveryDate}</p>
+              )}
             </div>
             <div>
-              <label htmlFor="city" className="eyebrow">City (optional)</label>
-              <input id="city" value={form.city} onChange={set("city")} maxLength={60} placeholder="e.g. Karachi" className={field} />
+              <label htmlFor="city" className="eyebrow">
+                City (optional)
+              </label>
+              <input
+                id="city"
+                value={form.city}
+                onChange={set("city")}
+                maxLength={60}
+                placeholder="e.g. Karachi"
+                className={field}
+              />
             </div>
           </div>
 
           <div>
-            <label htmlFor="product" className="eyebrow">Product or style (optional)</label>
+            <label htmlFor="product" className="eyebrow">
+              Product or style (optional)
+            </label>
             <input
               id="product"
               list="preorder-products"
@@ -183,14 +248,16 @@ function PreOrderPage() {
               className={field}
             />
             <datalist id="preorder-products">
-              {products.map((p) => (
-                <option key={p.id} value={p.name} />
+              {productNames.map((name) => (
+                <option key={name} value={name} />
               ))}
             </datalist>
           </div>
 
           <div>
-            <label htmlFor="notes" className="eyebrow">Notes (optional)</label>
+            <label htmlFor="notes" className="eyebrow">
+              Notes (optional)
+            </label>
             <textarea
               id="notes"
               value={form.notes}
@@ -205,12 +272,9 @@ function PreOrderPage() {
 
           <button type="submit" className="btn-salmon w-full">
             <MessageCircle size={17} className="mr-2" />
-            Send pre-order on WhatsApp
+            {preOrder.submitLabel}
           </button>
-          <p className="text-center text-xs text-muted-foreground">
-            Nothing is charged here — WhatsApp opens with your details so we can confirm price and
-            customization.
-          </p>
+          <p className="text-center text-xs text-muted-foreground">{preOrder.footnote}</p>
         </form>
       </Reveal>
     </div>

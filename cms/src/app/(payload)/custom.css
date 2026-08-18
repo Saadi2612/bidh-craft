@@ -1,0 +1,10 @@
+/*
+ * Admin-panel overrides.
+ *
+ * Payload derives most of its colours from the `--theme-elevation-*` scale and
+ * flips that whole scale between light and dark mode. Overriding one step at
+ * `:root` breaks contrast in the other theme, so scope any colour change to a
+ * single theme, e.g.:
+ *
+ *   [data-theme="light"] { --theme-elevation-0: #fffdfb; }
+ */

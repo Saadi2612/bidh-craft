@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, useRef, type ReactNode } from "react";
-import type { Product } from "@/lib/shop-data";
+import type { ProductCardData } from "@/lib/cms/types";
 
 /**
  * Page-level "no-duplicate" product placement.
@@ -25,21 +25,21 @@ export function ProductDedupeProvider({ children }: { children: ReactNode }) {
 function resolve(
   registry: Registry | null,
   sectionKey: string,
-  candidates: Product[],
+  candidates: ProductCardData[],
   limit?: number,
   allowFallback = false,
-): Product[] {
+): ProductCardData[] {
   const max = limit ?? candidates.length;
   if (!registry) return candidates.slice(0, max);
 
   const cached = registry.bySection.get(sectionKey);
   if (cached) {
     const byId = new Map(candidates.map((p) => [p.id, p]));
-    const hit = cached.map((id) => byId.get(id)).filter(Boolean) as Product[];
+    const hit = cached.map((id) => byId.get(id)).filter(Boolean) as ProductCardData[];
     if (hit.length === cached.length) return hit;
   }
 
-  const picked: Product[] = [];
+  const picked: ProductCardData[] = [];
   for (const p of candidates) {
     if (picked.length >= max) break;
     if (registry.claimed.has(p.id)) continue;
@@ -63,9 +63,9 @@ function resolve(
  */
 export function useUniqueProducts(
   sectionKey: string,
-  candidates: Product[],
+  candidates: ProductCardData[],
   options: { limit?: number; allowFallback?: boolean } = {},
-): Product[] {
+): ProductCardData[] {
   const registry = useContext(DedupeContext);
   const { limit, allowFallback } = options;
   const ids = candidates.map((p) => p.id).join(",");

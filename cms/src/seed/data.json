@@ -1,0 +1,1060 @@
+{
+  "categories": [
+    {
+      "slug": "bid-favor-boxes",
+      "name": "Bid Boxes / Favor Boxes",
+      "short": "The classic hand-printed guest favor.",
+      "intro": "Our signature bid boxes are the little hand-printed keepsakes you hand to every guest as they leave. Two-piece lids, satin ribbon and floral block prints — perfect for Nikkah (the marriage ceremony), Walima receptions and Mehndi nights. Fill them with mithai, dry fruit, chocolates or trinkets.",
+      "image": "local:src/assets/cat-favor.jpg",
+      "imageAlt": "Stack of handmade pink hand-printed favor boxes with ribbon",
+      "pricing": "boxRange",
+      "specs": {
+        "material": "300gsm hand-printed board with satin ribbon",
+        "size": "Approx. 3.5 x 3.5 x 2 inches",
+        "finish": "Matte hand block print, gold-foil name tag optional",
+        "moq": "Minimum 20 pieces"
+      }
+    },
+    {
+      "slug": "tin-boxes",
+      "name": "Tin Boxes",
+      "short": "Durable, reusable and beautifully printed.",
+      "intro": "Tin boxes are durable, reusable and feel instantly premium in the hand — ideal for sweets, dry fruit and chocolate gifting. Each lid is hand-printed or hand-painted, so guests keep them long after the event.",
+      "image": "local:src/assets/cat-tin.jpg",
+      "imageAlt": "Round rose gold floral hand-painted tin gift boxes",
+      "pricing": "boxRange",
+      "specs": {
+        "material": "Food-safe reusable tin with printed lid",
+        "size": "Approx. 4 inch diameter x 2 inch depth",
+        "finish": "Matte lid print, wipe-clean and reusable",
+        "moq": "Minimum 20 pieces"
+      }
+    },
+    {
+      "slug": "sweet-boxes",
+      "name": "Sweet Boxes",
+      "short": "Mithai and dessert boxes with compartments.",
+      "intro": "Built for mithai, barfi, chocolates and dessert portions with neat compartments and sturdy lids. A favourite for Walima (the reception hosted after the wedding) and Aqeeqa distributions where boxes travel between homes.",
+      "image": "local:src/assets/cat-sweet.jpg",
+      "imageAlt": "Open handmade salmon sweet box with gold detailing and mithai",
+      "pricing": "boxRange",
+      "specs": {
+        "material": "Food-grade board with insert tray",
+        "size": "Approx. 6 x 6 x 2 inches",
+        "finish": "Hand-printed sleeve, compartment inserts included",
+        "moq": "Minimum 25 pieces"
+      }
+    },
+    {
+      "slug": "baby-announcement-boxes",
+      "name": "Baby Announcement Boxes",
+      "short": "For Aqeeqa and newborn news.",
+      "intro": "Soft pastel boxes to announce your newest arrival, made for Aqeeqa (the celebration held for a newborn) and baby showers. Hand-printed clouds, stars and tiny bows — personalised with baby's name on request.",
+      "image": "local:src/assets/cat-baby.jpg",
+      "imageAlt": "Pastel pink and mint baby announcement gift boxes with bows",
+      "pricing": "boxRange",
+      "specs": {
+        "material": "Rigid board with ribbon tie and name card",
+        "size": "Approx. 5 x 5 x 2.5 inches",
+        "finish": "Hand-stamped motifs, personalised baby name card",
+        "moq": "Minimum 15 pieces"
+      }
+    },
+    {
+      "slug": "nikkah-signs-pens",
+      "name": "Nikkah Signs & Qubool Hai Pens",
+      "short": "Gold calligraphy props for the signing moment.",
+      "intro": "The Nikkah signing is the single most photographed minute of the whole wedding. Our hand-cut “Qubool Hai” pens, feather toppers and calligraphy signs are made in gold mirror-finish with fresh-flower gota wrapping, so the bride and groom hold something beautiful in every frame.",
+      "image": "remote:/__l5e/assets-v1/7977f8d2-57d6-4e58-8ae1-7aeb91dfb28e/qubool-hai-pen.jpg",
+      "imageAlt": "Gold Qubool Hai calligraphy pens with white feather and gota flower wrap",
+      "pricing": "quote",
+      "specs": {
+        "material": "Acrylic / MDF sign, metal pen with resin topper",
+        "size": "Sign approx. 8 inches, pen standard length",
+        "finish": "Hand-glittered calligraphy, name and date customisable",
+        "moq": "Available as single pieces"
+      }
+    },
+    {
+      "slug": "mehndi-handheld-signs",
+      "name": "Mehndi Handheld Signs",
+      "short": "Round embroidered boards for the baraat entry.",
+      "intro": "Handheld round signs for the Mehndi and Baraat entrance — “Meri Behen Ki Mehndi”, “Dulhay Ki Saliyan”, or any line you want in Urdu or English. Velvet or embroidered base, gota-kinari border, tiny pom-poms and a wrapped handle. Made to be waved, danced with and photographed.",
+      "image": "remote:/__l5e/assets-v1/54d3550a-3aa5-4d70-a0e0-51e8bec984ba/mehndi-sign-behen.jpg",
+      "imageAlt": "Green embroidered round Mehndi handheld sign with gold Urdu calligraphy",
+      "pricing": "quote",
+      "specs": {
+        "material": "Foam board with wooden handle",
+        "size": "Approx. 10-12 inches across",
+        "finish": "Hand-cut lettering, glitter or matte finish",
+        "moq": "Available as single pieces"
+      }
+    },
+    {
+      "slug": "bazuband-armbands",
+      "name": "Bazuband Armbands",
+      "short": "MashAllah armbands for the bride and groom.",
+      "intro": "Matching bazuband armbands worn on the sleeve at Mayun, Mehndi and Nikkah. Velvet base with hand-embroidered “MashAllah” in zari, mirror work and gota edging, finished with adjustable ties so they sit perfectly on any sleeve.",
+      "image": "remote:/__l5e/assets-v1/b37c5d1e-0907-4026-a555-687f25b8a972/bazuband-armbands.jpg",
+      "imageAlt": "Green velvet MashAllah bazuband armbands worn by a couple at their Mayun",
+      "pricing": "quote",
+      "specs": {
+        "material": "Velvet base with gota, pearls and zari work",
+        "size": "Adjustable tie, fits most arm sizes",
+        "finish": "Hand-embellished, sold as a matching pair",
+        "moq": "Sold per pair"
+      }
+    },
+    {
+      "slug": "velvet-nameplates",
+      "name": "Velvet Nameplates & Wall Hangings",
+      "short": "Keepsake zari calligraphy on velvet.",
+      "intro": "Deep velvet panels with hand-glittered zari calligraphy, mirror-studded gota borders and hanging cords — “MashAllah”, “Ayat-ul-Kursi”, family names or a wedding date. Made as a decor piece for the event and a keepsake for the home afterwards.",
+      "image": "remote:/__l5e/assets-v1/7074f091-2aa0-445b-a14c-9d38f6d45bfc/velvet-mashallah-plaques.jpg",
+      "imageAlt": "Two maroon velvet MashAllah plaques with gold glitter calligraphy and gota borders",
+      "pricing": "quote",
+      "specs": {
+        "material": "Velvet panel on board with hanging cord",
+        "size": "Approx. 12 x 9 inches",
+        "finish": "Hand-glittered zari calligraphy with gota border",
+        "moq": "Available as single pieces"
+      }
+    },
+    {
+      "slug": "cone-favours",
+      "name": "Cone Favours (Dholki & Baat Pakki)",
+      "short": "Sonf-supari cones with personalised tags.",
+      "intro": "Clear cone favours filled with sonf, supari or colourful mishri, sealed with satin ribbon and finished with a printed tag carrying your name and date — “Filza Ki Dholki”, “Baat Pakki”, “Dua-e-Khair”. The fastest, prettiest giveaway for Dholki nights, Baat Pakki and Mehndi trays.",
+      "image": "remote:/__l5e/assets-v1/1f9f618c-f543-45d8-b1b2-ed9aa09c0191/dholki-cone-favours.jpg",
+      "imageAlt": "Hand holding two clear cone favours of colourful mishri with pink Dholki tags",
+      "pricing": "quote",
+      "specs": {
+        "material": "Food-grade clear cone, satin ribbon, printed tag",
+        "size": "Approx. 7 inch cone",
+        "finish": "Filled with sonf, supari or mishri; name and date printed",
+        "moq": "Minimum 30 cones"
+      }
+    },
+    {
+      "slug": "qubool-hai-favours",
+      "name": "Qubool Hai Nikkah Favours",
+      "short": "Acrylic jars and chocolate boxes for the Nikkah.",
+      "intro": "Nikkah-day giveaways built around one line: “Qubool Hai”. Clear acrylic keepsake jars with dry fruit and a personalised sage label, plus slim gold-foiled chocolate boxes for Baat Pakki and Dua-e-Khair. Names and date printed on every piece; plain customisable versions also available.",
+      "image": "remote:/__l5e/assets-v1/354ed539-1ae8-4504-b992-24395917af92/qubool-hai-acrylic-jar.jpg",
+      "imageAlt": "Clear acrylic Qubool Hai favour jar with sage label filled with dry fruit",
+      "pricing": "quote",
+      "specs": {
+        "material": "Clear acrylic jar or rigid gold-foiled board box",
+        "size": "Jar approx. 2.5 inches; box approx. 6 x 2 inches",
+        "finish": "Personalised label with couple's names and Nikkah date",
+        "moq": "Minimum 20 pieces"
+      }
+    }
+  ],
+  "occasions": [
+    {
+      "slug": "nikkah",
+      "name": "Nikkah",
+      "note": "The marriage ceremony",
+      "emoji": "💍"
+    },
+    {
+      "slug": "walima",
+      "name": "Walima",
+      "note": "The reception after",
+      "emoji": "🌸"
+    },
+    {
+      "slug": "mehndi",
+      "name": "Mehndi",
+      "note": "The henna night",
+      "emoji": "🪔"
+    },
+    {
+      "slug": "aqeeqa",
+      "name": "Aqeeqa",
+      "note": "Newborn celebration",
+      "emoji": "🍼"
+    },
+    {
+      "slug": "birthday",
+      "name": "Birthdays",
+      "note": "Every happy year",
+      "emoji": "🎂"
+    }
+  ],
+  "products": [
+    {
+      "legacyId": "fb-1",
+      "name": "Floral Two-Piece Favor Box",
+      "blurb": "Hand block-printed lid with satin ribbon.",
+      "category": "bid-favor-boxes",
+      "occasions": [
+        "nikkah",
+        "walima"
+      ],
+      "price": 160,
+      "unit": "box",
+      "featured": true,
+      "image": null
+    },
+    {
+      "legacyId": "fb-2",
+      "name": "Cotton Rose Nikkah Bid Box",
+      "blurb": "Blush pink with gold-foil name tag.",
+      "category": "bid-favor-boxes",
+      "occasions": [
+        "nikkah"
+      ],
+      "price": 170,
+      "unit": "box",
+      "featured": true,
+      "image": null
+    },
+    {
+      "legacyId": "fb-3",
+      "name": "Gold Leaf Walima Favor Box",
+      "blurb": "Soft gold leaf print on warm white.",
+      "category": "bid-favor-boxes",
+      "occasions": [
+        "walima"
+      ],
+      "price": 180,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "fb-4",
+      "name": "Mehndi Trinket Box",
+      "blurb": "Marigold motifs, hand-painted edges.",
+      "category": "bid-favor-boxes",
+      "occasions": [
+        "mehndi"
+      ],
+      "price": 165,
+      "unit": "box",
+      "featured": true,
+      "image": null
+    },
+    {
+      "legacyId": "fb-5",
+      "name": "Pearl Ribbon Pillow Box",
+      "blurb": "Curved pillow shape with pearl tie.",
+      "category": "bid-favor-boxes",
+      "occasions": [
+        "nikkah",
+        "walima"
+      ],
+      "price": 150,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "fb-6",
+      "name": "Mini Jute-Tie Favor Box",
+      "blurb": "Rustic jute tie, printed sleeve.",
+      "category": "bid-favor-boxes",
+      "occasions": [
+        "mehndi",
+        "birthday"
+      ],
+      "price": 150,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "fb-7",
+      "name": "Hand-Printed Chocolate Bid Box",
+      "blurb": "Fits 4 chocolates snugly.",
+      "category": "bid-favor-boxes",
+      "occasions": [
+        "nikkah",
+        "birthday"
+      ],
+      "price": 175,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "fb-8",
+      "name": "Blossom Window Favor Box",
+      "blurb": "Clear window to show what's inside.",
+      "category": "bid-favor-boxes",
+      "occasions": [
+        "walima",
+        "birthday"
+      ],
+      "price": 190,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "tb-1",
+      "name": "Rose Gold Tin Box",
+      "blurb": "Reusable tin, hand-printed floral lid.",
+      "category": "tin-boxes",
+      "occasions": [
+        "nikkah",
+        "walima"
+      ],
+      "price": 200,
+      "unit": "box",
+      "featured": true,
+      "image": null
+    },
+    {
+      "legacyId": "tb-2",
+      "name": "Blush Floral Round Tin",
+      "blurb": "Watercolour bloom on a matte lid.",
+      "category": "tin-boxes",
+      "occasions": [
+        "mehndi",
+        "birthday"
+      ],
+      "price": 190,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "tb-3",
+      "name": "Sage Garden Tin Box",
+      "blurb": "Muted sage with fine line florals.",
+      "category": "tin-boxes",
+      "occasions": [
+        "walima"
+      ],
+      "price": 185,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "tb-4",
+      "name": "Dry Fruit Gifting Tin",
+      "blurb": "Deep tin for dry fruit portions.",
+      "category": "tin-boxes",
+      "occasions": [
+        "nikkah",
+        "walima"
+      ],
+      "price": 210,
+      "unit": "box",
+      "featured": true,
+      "image": null
+    },
+    {
+      "legacyId": "tb-5",
+      "name": "Petite Keepsake Tin",
+      "blurb": "Pocket-size, ideal for bangles.",
+      "category": "tin-boxes",
+      "occasions": [
+        "mehndi",
+        "birthday"
+      ],
+      "price": 160,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "tb-6",
+      "name": "Gold Rim Mithai Tin",
+      "blurb": "Gold rim with printed centre.",
+      "category": "tin-boxes",
+      "occasions": [
+        "walima",
+        "aqeeqa"
+      ],
+      "price": 205,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "tb-7",
+      "name": "Birthday Confetti Tin",
+      "blurb": "Hand-dotted confetti print.",
+      "category": "tin-boxes",
+      "occasions": [
+        "birthday"
+      ],
+      "price": 175,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "sb-1",
+      "name": "Aqeeqa Baby Boy Sweet Box",
+      "blurb": "Four-compartment mithai box.",
+      "category": "sweet-boxes",
+      "occasions": [
+        "aqeeqa"
+      ],
+      "price": 180,
+      "unit": "box",
+      "featured": true,
+      "image": null
+    },
+    {
+      "legacyId": "sb-2",
+      "name": "Aqeeqa Baby Girl Sweet Box",
+      "blurb": "Soft pink with printed booties.",
+      "category": "sweet-boxes",
+      "occasions": [
+        "aqeeqa"
+      ],
+      "price": 180,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "sb-3",
+      "name": "Walima Mithai Box (6 pc)",
+      "blurb": "Six-portion box with insert tray.",
+      "category": "sweet-boxes",
+      "occasions": [
+        "walima"
+      ],
+      "price": 200,
+      "unit": "box",
+      "featured": true,
+      "image": null
+    },
+    {
+      "legacyId": "sb-4",
+      "name": "Nikkah Barfi Box",
+      "blurb": "Slim box for barfi and ladoo.",
+      "category": "sweet-boxes",
+      "occasions": [
+        "nikkah"
+      ],
+      "price": 165,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "sb-5",
+      "name": "Two-Tier Dessert Box",
+      "blurb": "Stacked tiers with ribbon lock.",
+      "category": "sweet-boxes",
+      "occasions": [
+        "walima",
+        "birthday"
+      ],
+      "price": 210,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "sb-6",
+      "name": "Mehndi Sweet Pouch Box",
+      "blurb": "Pouch fold with henna motifs.",
+      "category": "sweet-boxes",
+      "occasions": [
+        "mehndi"
+      ],
+      "price": 155,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "sb-7",
+      "name": "Birthday Cupcake Box",
+      "blurb": "Holds two cupcakes safely.",
+      "category": "sweet-boxes",
+      "occasions": [
+        "birthday"
+      ],
+      "price": 170,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "ba-1",
+      "name": "Baby Announcement Cloud Box",
+      "blurb": "Hand-printed clouds and stars.",
+      "category": "baby-announcement-boxes",
+      "occasions": [
+        "aqeeqa"
+      ],
+      "price": 175,
+      "unit": "box",
+      "featured": true,
+      "image": null
+    },
+    {
+      "legacyId": "ba-2",
+      "name": "It's a Boy Announcement Box",
+      "blurb": "Mint ribbon with name card.",
+      "category": "baby-announcement-boxes",
+      "occasions": [
+        "aqeeqa"
+      ],
+      "price": 180,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "ba-3",
+      "name": "It's a Girl Announcement Box",
+      "blurb": "Blush ribbon with name card.",
+      "category": "baby-announcement-boxes",
+      "occasions": [
+        "aqeeqa"
+      ],
+      "price": 180,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "ba-4",
+      "name": "Little Star Newborn Box",
+      "blurb": "Tiny gold stars, hand-stamped.",
+      "category": "baby-announcement-boxes",
+      "occasions": [
+        "aqeeqa"
+      ],
+      "price": 160,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "ba-5",
+      "name": "Baby Shower Favor Box",
+      "blurb": "Mini favors for shower guests.",
+      "category": "baby-announcement-boxes",
+      "occasions": [
+        "aqeeqa",
+        "birthday"
+      ],
+      "price": 150,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "ba-6",
+      "name": "First Birthday Keepsake Box",
+      "blurb": "Keepsake box for year one.",
+      "category": "baby-announcement-boxes",
+      "occasions": [
+        "birthday"
+      ],
+      "price": 185,
+      "unit": "box",
+      "featured": false,
+      "image": null
+    },
+    {
+      "legacyId": "np-1",
+      "name": "Qubool Hai Feather Pen Set",
+      "blurb": "Two gold pens, feather top, gota flower wrap.",
+      "category": "nikkah-signs-pens",
+      "occasions": [
+        "nikkah"
+      ],
+      "price": null,
+      "unit": "pair",
+      "featured": true,
+      "image": "remote:/__l5e/assets-v1/7977f8d2-57d6-4e58-8ae1-7aeb91dfb28e/qubool-hai-pen.jpg"
+    },
+    {
+      "legacyId": "np-2",
+      "name": "Gold Mirror Qubool Hai Sign",
+      "blurb": "Hand-cut mirror calligraphy on a wrapped stick.",
+      "category": "nikkah-signs-pens",
+      "occasions": [
+        "nikkah"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/7977f8d2-57d6-4e58-8ae1-7aeb91dfb28e/qubool-hai-pen.jpg"
+    },
+    {
+      "legacyId": "np-3",
+      "name": "Nikkah Signing Pen (Single)",
+      "blurb": "One pen with pearl and fresh-flower detail.",
+      "category": "nikkah-signs-pens",
+      "occasions": [
+        "nikkah"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/7977f8d2-57d6-4e58-8ae1-7aeb91dfb28e/qubool-hai-pen.jpg"
+    },
+    {
+      "legacyId": "np-4",
+      "name": "Alhamdulillah Nikkah Board",
+      "blurb": "Velvet board for the couple's first photo.",
+      "category": "nikkah-signs-pens",
+      "occasions": [
+        "nikkah",
+        "walima"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/7074f091-2aa0-445b-a14c-9d38f6d45bfc/velvet-mashallah-plaques.jpg"
+    },
+    {
+      "legacyId": "ms-1",
+      "name": "Meri Behen Ki Mehndi Sign",
+      "blurb": "Green embroidered round with gota border.",
+      "category": "mehndi-handheld-signs",
+      "occasions": [
+        "mehndi"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": true,
+      "image": "remote:/__l5e/assets-v1/54d3550a-3aa5-4d70-a0e0-51e8bec984ba/mehndi-sign-behen.jpg"
+    },
+    {
+      "legacyId": "ms-2",
+      "name": "Dulhay Ki Saliyan Round Sign",
+      "blurb": "Bottle-green velvet with gold lettering.",
+      "category": "mehndi-handheld-signs",
+      "occasions": [
+        "mehndi",
+        "walima"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": true,
+      "image": "remote:/__l5e/assets-v1/e5cbec70-4308-4b41-a16b-b11ed8efcf2f/dulhay-ki-saliyan-sign.jpg"
+    },
+    {
+      "legacyId": "ms-3",
+      "name": "Custom Urdu Calligraphy Sign",
+      "blurb": "Any line you want, hand-lettered in Urdu.",
+      "category": "mehndi-handheld-signs",
+      "occasions": [
+        "mehndi",
+        "nikkah"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/048d00ef-d0b0-43d6-9cc7-009356f5d950/mehndi-sign-round.jpg"
+    },
+    {
+      "legacyId": "ms-4",
+      "name": "Pom-Pom Baraat Entry Sign",
+      "blurb": "Colour pom-poms and wrapped handle.",
+      "category": "mehndi-handheld-signs",
+      "occasions": [
+        "mehndi"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/048d00ef-d0b0-43d6-9cc7-009356f5d950/mehndi-sign-round.jpg"
+    },
+    {
+      "legacyId": "ms-5",
+      "name": "Mini Mehndi Sign (Set of 4)",
+      "blurb": "Small signs for the whole squad.",
+      "category": "mehndi-handheld-signs",
+      "occasions": [
+        "mehndi",
+        "birthday"
+      ],
+      "price": null,
+      "unit": "set",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/54d3550a-3aa5-4d70-a0e0-51e8bec984ba/mehndi-sign-behen.jpg"
+    },
+    {
+      "legacyId": "bz-1",
+      "name": "MashAllah Velvet Bazuband (Pair)",
+      "blurb": "Bride and groom set, zari embroidery.",
+      "category": "bazuband-armbands",
+      "occasions": [
+        "nikkah",
+        "mehndi"
+      ],
+      "price": null,
+      "unit": "pair",
+      "featured": true,
+      "image": "remote:/__l5e/assets-v1/b37c5d1e-0907-4026-a555-687f25b8a972/bazuband-armbands.jpg"
+    },
+    {
+      "legacyId": "bz-2",
+      "name": "Green Zari Bazuband",
+      "blurb": "Classic Mayun green with mirror work.",
+      "category": "bazuband-armbands",
+      "occasions": [
+        "mehndi"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/b37c5d1e-0907-4026-a555-687f25b8a972/bazuband-armbands.jpg"
+    },
+    {
+      "legacyId": "bz-3",
+      "name": "Maroon Velvet Bazuband",
+      "blurb": "Deep maroon with gold gota edging.",
+      "category": "bazuband-armbands",
+      "occasions": [
+        "nikkah",
+        "walima"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/7074f091-2aa0-445b-a14c-9d38f6d45bfc/velvet-mashallah-plaques.jpg"
+    },
+    {
+      "legacyId": "bz-4",
+      "name": "Personalised Name Bazuband",
+      "blurb": "Your name hand-embroidered in zari.",
+      "category": "bazuband-armbands",
+      "occasions": [
+        "nikkah",
+        "mehndi"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/b37c5d1e-0907-4026-a555-687f25b8a972/bazuband-armbands.jpg"
+    },
+    {
+      "legacyId": "vn-1",
+      "name": "MashAllah Velvet Plaque",
+      "blurb": "Maroon velvet, gold glitter calligraphy.",
+      "category": "velvet-nameplates",
+      "occasions": [
+        "nikkah",
+        "aqeeqa"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": true,
+      "image": "remote:/__l5e/assets-v1/7074f091-2aa0-445b-a14c-9d38f6d45bfc/velvet-mashallah-plaques.jpg"
+    },
+    {
+      "legacyId": "vn-2",
+      "name": "MashAllah Plaque Pair",
+      "blurb": "Two matching hangings with cords.",
+      "category": "velvet-nameplates",
+      "occasions": [
+        "nikkah",
+        "walima"
+      ],
+      "price": null,
+      "unit": "pair",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/7074f091-2aa0-445b-a14c-9d38f6d45bfc/velvet-mashallah-plaques.jpg"
+    },
+    {
+      "legacyId": "vn-3",
+      "name": "Baby Name Velvet Hanging",
+      "blurb": "Newborn's name in zari on soft velvet.",
+      "category": "velvet-nameplates",
+      "occasions": [
+        "aqeeqa",
+        "birthday"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/7074f091-2aa0-445b-a14c-9d38f6d45bfc/velvet-mashallah-plaques.jpg"
+    },
+    {
+      "legacyId": "vn-4",
+      "name": "Wedding Date Keepsake Panel",
+      "blurb": "Your date, kept long after the day.",
+      "category": "velvet-nameplates",
+      "occasions": [
+        "nikkah",
+        "walima"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/7074f091-2aa0-445b-a14c-9d38f6d45bfc/velvet-mashallah-plaques.jpg"
+    },
+    {
+      "legacyId": "cf-1",
+      "name": "Dholki Mishri Cone Favour",
+      "blurb": "Colour mishri cone with pink personalised tag.",
+      "category": "cone-favours",
+      "occasions": [
+        "mehndi"
+      ],
+      "price": null,
+      "unit": "cone",
+      "featured": true,
+      "image": "remote:/__l5e/assets-v1/1f9f618c-f543-45d8-b1b2-ed9aa09c0191/dholki-cone-favours.jpg"
+    },
+    {
+      "legacyId": "cf-2",
+      "name": "Baat Pakki Sonf-Supari Cone",
+      "blurb": "Sage tag, sonf on top, mishri below.",
+      "category": "cone-favours",
+      "occasions": [
+        "nikkah"
+      ],
+      "price": null,
+      "unit": "cone",
+      "featured": true,
+      "image": "remote:/__l5e/assets-v1/1d2c5c02-d53d-4961-a251-1dfef654e583/baat-pakki-cone-favours.jpg"
+    },
+    {
+      "legacyId": "cf-3",
+      "name": "Mehndi Cone Favour Tray (Set of 20)",
+      "blurb": "Ready-arranged fan tray for the Mehndi table.",
+      "category": "cone-favours",
+      "occasions": [
+        "mehndi"
+      ],
+      "price": null,
+      "unit": "set",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/1f9f618c-f543-45d8-b1b2-ed9aa09c0191/dholki-cone-favours.jpg"
+    },
+    {
+      "legacyId": "cf-4",
+      "name": "Custom Name & Date Cone Tags",
+      "blurb": "Printed tags in your colours and font.",
+      "category": "cone-favours",
+      "occasions": [
+        "nikkah",
+        "mehndi",
+        "birthday"
+      ],
+      "price": null,
+      "unit": "set",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/1d2c5c02-d53d-4961-a251-1dfef654e583/baat-pakki-cone-favours.jpg"
+    },
+    {
+      "legacyId": "qh-1",
+      "name": "Qubool Hai Acrylic Keepsake Jar",
+      "blurb": "Clear jar, sage label with names and date.",
+      "category": "qubool-hai-favours",
+      "occasions": [
+        "nikkah"
+      ],
+      "price": null,
+      "unit": "jar",
+      "featured": true,
+      "image": "remote:/__l5e/assets-v1/354ed539-1ae8-4504-b992-24395917af92/qubool-hai-acrylic-jar.jpg"
+    },
+    {
+      "legacyId": "qh-2",
+      "name": "Qubool Hai Chocolate Box",
+      "blurb": "Slim white box with gold-foil Urdu calligraphy.",
+      "category": "qubool-hai-favours",
+      "occasions": [
+        "nikkah",
+        "walima"
+      ],
+      "price": null,
+      "unit": "box",
+      "featured": true,
+      "image": "remote:/__l5e/assets-v1/a0fab22a-a107-43fb-a582-d65ac7a2c1d6/qubool-hai-chocolate-box.jpg"
+    },
+    {
+      "legacyId": "qh-3",
+      "name": "Dua-e-Khair Favour Box",
+      "blurb": "Same box, Dua-e-Khair wording.",
+      "category": "qubool-hai-favours",
+      "occasions": [
+        "nikkah"
+      ],
+      "price": null,
+      "unit": "box",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/a0fab22a-a107-43fb-a582-d65ac7a2c1d6/qubool-hai-chocolate-box.jpg"
+    },
+    {
+      "legacyId": "qh-4",
+      "name": "Plain Customisable Favour Box",
+      "blurb": "Blank box — add any line you like.",
+      "category": "qubool-hai-favours",
+      "occasions": [
+        "nikkah",
+        "walima",
+        "birthday"
+      ],
+      "price": null,
+      "unit": "box",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/a0fab22a-a107-43fb-a582-d65ac7a2c1d6/qubool-hai-chocolate-box.jpg"
+    },
+    {
+      "legacyId": "qh-5",
+      "name": "Gold Treasure Chest Favour",
+      "blurb": "Clear acrylic chest, gold frame, satin bow and printed name tag.",
+      "category": "qubool-hai-favours",
+      "occasions": [
+        "nikkah",
+        "walima",
+        "birthday"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": true,
+      "image": "remote:/__l5e/assets-v1/b561c011-3906-4818-be9c-29c9ca392ec1/gold-treasure-chest-favour.jpg"
+    },
+    {
+      "legacyId": "qh-6",
+      "name": "Gold Saunf & Supari Serving Box",
+      "blurb": "Ornate gold chest for saunf, supari or mishri on the head table.",
+      "category": "qubool-hai-favours",
+      "occasions": [
+        "nikkah",
+        "walima"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/82786374-26a1-4d45-97a5-d171beb588e6/gold-saunf-serving-box.jpg"
+    },
+    {
+      "legacyId": "fb-9",
+      "name": "Navy & Gold Pyramid Nikkah Box",
+      "blurb": "Couple's names in gold foil on deep navy, satin bow at the top.",
+      "category": "bid-favor-boxes",
+      "occasions": [
+        "nikkah",
+        "walima"
+      ],
+      "price": 195,
+      "unit": "box",
+      "featured": true,
+      "image": "remote:/__l5e/assets-v1/b26e92f7-19c7-4e40-9388-14dacb1866c4/navy-gold-pyramid-favour-box.jpg"
+    },
+    {
+      "legacyId": "fb-10",
+      "name": "Ivory Gold-Foil Ribbon Favor Box",
+      "blurb": "Monogram tag, gold foil crest and a full satin bow.",
+      "category": "bid-favor-boxes",
+      "occasions": [
+        "nikkah",
+        "walima"
+      ],
+      "price": 185,
+      "unit": "box",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/6864c963-79ed-4232-a29f-7e6ac951cfbc/gold-foil-ribbon-favour-box.jpg"
+    },
+    {
+      "legacyId": "fb-11",
+      "name": "Jute Pouch Favour with Name Tag",
+      "blurb": "Rustic jute drawstring pouch with a printed floral name tag.",
+      "category": "bid-favor-boxes",
+      "occasions": [
+        "nikkah",
+        "mehndi"
+      ],
+      "price": 150,
+      "unit": "box",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/e219e71b-2a6a-46cb-a43a-5b34db67058e/jute-pouch-favour.jpg"
+    },
+    {
+      "legacyId": "tb-8",
+      "name": "Printed Couple Portrait Tin",
+      "blurb": "Your illustrated portrait on the lid, gold rim, reusable tin.",
+      "category": "tin-boxes",
+      "occasions": [
+        "nikkah",
+        "walima"
+      ],
+      "price": 210,
+      "unit": "box",
+      "featured": true,
+      "image": "remote:/__l5e/assets-v1/021e1bd9-ae2f-471c-9384-6019be06097d/printed-couple-tin-boxes.jpg"
+    },
+    {
+      "legacyId": "cf-5",
+      "name": "Pink Tag Mishri & Sonf Cone",
+      "blurb": "Bright pink foil tag with the couple's names, layered mishri and sonf.",
+      "category": "cone-favours",
+      "occasions": [
+        "mehndi",
+        "nikkah"
+      ],
+      "price": null,
+      "unit": "cone",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/61cfd7cc-cff7-436a-b29d-7f25e68e9478/pink-tag-mishri-cone.jpg"
+    },
+    {
+      "legacyId": "ms-6",
+      "name": "Shadi Meri, Tension Apko Canvas Sign",
+      "blurb": "Large hand-painted canvas board for the photo corner.",
+      "category": "mehndi-handheld-signs",
+      "occasions": [
+        "mehndi",
+        "nikkah"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": true,
+      "image": "remote:/__l5e/assets-v1/47c7434c-45de-4331-90ce-714d816e912c/shadi-tension-canvas-sign.jpg"
+    },
+    {
+      "legacyId": "ms-7",
+      "name": "Abhi Bhi Time Hai Bhaag Ja Placard",
+      "blurb": "Bold yellow-on-pink cutout letters with mandala print.",
+      "category": "mehndi-handheld-signs",
+      "occasions": [
+        "mehndi",
+        "walima"
+      ],
+      "price": null,
+      "unit": "piece",
+      "featured": false,
+      "image": "remote:/__l5e/assets-v1/fe0665ce-818a-4f36-906d-d708fa0515bc/bhaag-ja-placard-sign.jpg"
+    },
+    {
+      "legacyId": "vn-5",
+      "name": "Mehndi Lgao Velvet Gota Sign Set",
+      "blurb": "Four velvet panels — Mehndi Lgao, Nacho Gao, Photo Khincho, Khao Piyo.",
+      "category": "velvet-nameplates",
+      "occasions": [
+        "mehndi"
+      ],
+      "price": null,
+      "unit": "set",
+      "featured": true,
+      "image": "remote:/__l5e/assets-v1/71697419-21e1-4ddc-8325-7699de01c097/velvet-gota-mehndi-plaques.jpg"
+    }
+  ],
+  "clients": [
+    "Honda",
+    "UCP",
+    "HBL",
+    "KFC",
+    "Suzuki",
+    "Jannat Mirza",
+    "Sehar Hayat",
+    "Sistrology",
+    "Ducky Bhai",
+    "Aroob Jatoi",
+    "Brighto Paints",
+    "Rajab Butt",
+    "BOP"
+  ]
+}

@@ -1,36 +1,56 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, Search, Instagram, ChevronDown } from "lucide-react";
-import { categories, occasions, ORDER_WA } from "@/lib/shop-data";
+
+import { useShell } from "@/lib/cms/context";
+import { orderWaLink } from "@/lib/cms/derive";
+import { imageAlt, imageUrl } from "@/lib/cms/image";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const { settings, categories, occasions } = useShell();
+  const orderWa = orderWaLink(settings);
 
   return (
     <header className="sticky top-0 z-40">
-      <div className="bg-cocoa text-cream text-center text-[0.72rem] tracking-[0.14em] py-2 px-4">
-        Custom orders for Nikkah, Walima, Mehndi &amp; Aqeeqa — please order at least 5 days before your event 📦
-      </div>
+      {settings.announcementBar && (
+        <div className="bg-cocoa text-cream text-center text-[0.72rem] tracking-[0.14em] py-2 px-4">
+          {settings.announcementBar}
+        </div>
+      )}
 
       <div className="backdrop-blur-md bg-card/90 border-b border-border">
         <div className="container-x flex items-center justify-between gap-4 h-[72px]">
           <Link to="/" className="flex items-center gap-3">
-            {/* Logo image placeholder — swap the span for an <img> when the logo file is ready */}
-            <span
-              data-image-placeholder="logo"
-              className="grid place-items-center h-10 w-10 rounded-full bg-secondary font-display text-lg"
-              aria-hidden="true"
-            >
-              B
-            </span>
+            {settings.logo ? (
+              <img
+                src={imageUrl(settings.logo, { width: 80, height: 80 })}
+                alt={imageAlt(settings.logo, `${settings.brandName} logo`)}
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-full object-cover"
+              />
+            ) : (
+              <span
+                data-image-placeholder="logo"
+                className="grid place-items-center h-10 w-10 rounded-full bg-secondary font-display text-lg"
+                aria-hidden="true"
+              >
+                {settings.brandName.charAt(0)}
+              </span>
+            )}
             <span className="font-display text-xl sm:text-2xl tracking-[0.22em]">
-              THEBIDHCRAFT
+              {settings.brandName}
             </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-7 text-sm">
-            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
-            <Link to="/shop" className="hover:text-primary transition-colors">Shop</Link>
+            <Link to="/" className="hover:text-primary transition-colors">
+              Home
+            </Link>
+            <Link to="/shop" className="hover:text-primary transition-colors">
+              Shop
+            </Link>
 
             <Dropdown label="Categories">
               {categories.map((c) => (
@@ -59,9 +79,15 @@ export function Header() {
               ))}
             </Dropdown>
 
-            <Link to="/pre-order" className="hover:text-primary transition-colors">Pre-Order</Link>
-            <Link to="/about" className="hover:text-primary transition-colors">About</Link>
-            <Link to="/contact" className="hover:text-primary transition-colors">Contact</Link>
+            <Link to="/pre-order" className="hover:text-primary transition-colors">
+              Pre-Order
+            </Link>
+            <Link to="/about" className="hover:text-primary transition-colors">
+              About
+            </Link>
+            <Link to="/contact" className="hover:text-primary transition-colors">
+              Contact
+            </Link>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -73,15 +99,20 @@ export function Header() {
               <Search size={18} />
             </Link>
             <a
-              href="https://www.instagram.com/thebidhcraft/"
+              href={settings.instagramUrl}
               target="_blank"
               rel="noreferrer"
-              aria-label="THEBIDHCRAFT on Instagram"
+              aria-label={`${settings.brandName} on Instagram`}
               className="hidden sm:grid place-items-center h-10 w-10 rounded-full hover:bg-secondary/60 transition-colors"
             >
               <Instagram size={18} />
             </a>
-            <a href={ORDER_WA} target="_blank" rel="noreferrer" className="btn-salmon text-sm hidden sm:inline-flex">
+            <a
+              href={orderWa}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-salmon text-sm hidden sm:inline-flex"
+            >
               Order on WhatsApp
             </a>
             <button
@@ -133,7 +164,7 @@ export function Header() {
                 </Link>
               ))}
             </div>
-            <a href={ORDER_WA} target="_blank" rel="noreferrer" className="btn-salmon mt-4 w-full">
+            <a href={orderWa} target="_blank" rel="noreferrer" className="btn-salmon mt-4 w-full">
               Order on WhatsApp
             </a>
           </div>

@@ -26,12 +26,27 @@ const corsOrigins = (process.env.CORS_ORIGINS ?? "")
   .map((origin) => origin.trim())
   .filter(Boolean);
 
-const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000";
+// Vercel exposes the host without a scheme. `VERCEL_PROJECT_PRODUCTION_URL` is
+// the stable production domain; `VERCEL_URL` is unique per deployment, which is
+// the only way a preview build can know the origin it is actually served from.
+const vercelOrigin = (host: string | undefined) => (host ? `https://${host}` : null);
+const vercelOrigins = [
+  vercelOrigin(process.env.VERCEL_PROJECT_PRODUCTION_URL),
+  vercelOrigin(process.env.VERCEL_URL),
+].filter((origin): origin is string => Boolean(origin));
+
+const serverURL =
+  process.env.NEXT_PUBLIC_SERVER_URL || vercelOrigins[0] || "http://localhost:3000";
 
 // The admin panel calls its own API from its own origin, so that origin must
 // always be allowed — otherwise every save in the admin gets rejected as a
 // forged cross-site request the moment `csrf` is set to anything at all.
-const csrfOrigins = Array.from(new Set([serverURL, ...corsOrigins]));
+//
+// Browsers send `Origin` on POST but not on same-origin GET, so a missing entry
+// here fails in the least obvious way possible: pages load fine while every
+// write — including the admin's own drawer render calls — comes back 401.
+// Hence every origin this CMS can answer on, not just `serverURL`.
+const csrfOrigins = Array.from(new Set([serverURL, ...vercelOrigins, ...corsOrigins]));
 
 export default buildConfig({
   serverURL,
